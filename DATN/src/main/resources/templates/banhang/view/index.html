@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{banhang/layout/layout :: banhang(~{::title},~{::main})}">
+
+<head>
+	<meta charset="utf-8">
+	<title>Timups | Trang chủ</title>
+</head>
+
+<body>
+	<main>
+		<section class="slider_section ">
+			<div id="customCarousel1" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div class="container-fluid ">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="detail-box">
+										<h1>Smart Watches</h1>
+										<p>Mẫu Forerunner 265 bao gồm hai biến thể Forerunner 265S
+											42mm và Forerunner 265 46mm. Mẫu 265S cung cấp thời lượng pin
+											lên đến 24 giờ ở chế độ GPS và tối đa 15 ngày ở chế độ
+											smartwatch. Trong khi đó, mẫu 265 cung cấp thời lượng pin lên
+											đến 20 giờ ở chế độ GPS và 13 ngày ở chế độ smartwatch.</p>
+										<div class="btn-box">
+											<a href="#!contact" class="btn1"> Liên hệ </a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="img-box">
+										<img th:src="@{/images/garmin.png}" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item ">
+						<div class="container-fluid ">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="detail-box">
+										<h1>Smart Watches</h1>
+										<p>Garmin đã ra mắt một chiếc đồng hồ thông minh khác, có
+											tên là Forerunner 55, tập trung vào người chạy bộ và đặc biệt
+											là những người mới bắt đầu tham gia hoạt động này. Đồng hồ cho
+											phép người dùng theo dõi số liệu thống kê về hoạt động chạy
+											hoặc đi bộ của họ theo thời gian.</p>
+										<div class="btn-box">
+											<a href="" class="btn1"> Liên hệ </a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="img-box">
+										<img th:src="@{/images/Garmin3.png}" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item ">
+						<div class="container-fluid ">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="detail-box">
+										<h1>Smart Watches</h1>
+										<p>Đồng hồ đeo tay thông minh hay smartwatch là một thiết
+											bị có chức năng, kiểu dáng, cách sử dụng cơ bản gần giống như
+											đồng hồ truyền thống nhưng được bổ sung thêm nhiều tính năng
+											thông minh giống như của smartphone như lên mạng, xem thông
+											báo hoặc đo nhịp tim. So với đồng hồ thông thường, các đồng hồ
+											thông minh còn có màn hình màu, khe cắm sim, thẻ nhớ hoặc thậm
+											chí tích hợp cả camera</p>
+										<div class="btn-box">
+											<a href="" class="btn1"> Liên hệ </a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="img-box">
+										<img th:src="@{/images/Garmin3.png}" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ol class="carousel-indicators">
+					<li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+					<li data-target="#customCarousel1" data-slide-to="1"></li>
+					<li data-target="#customCarousel1" data-slide-to="2"></li>
+				</ol>
+			</div>
+	
+		</section>
+		<!-- end slider section -->
+	
+	
+		<!-- shop section -->
+	
+		<section class="shop_section layout_padding" ng-controller="homectrl">
+			<div class="container" id="productSection">
+				<div class="heading_container heading_center">
+					<h2>Sản phẩm mới</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-6" ng-repeat="sp in sanphams" ng-if="$index === 0">
+						<!-- Nội dung hiển thị của sản phẩm thứ nhất -->
+						<div class="box">
+							<a href="">
+								<div class="img-box">
+									<img ng-src="/src/main/webapp/images/sanpham/{{sp.hinhanh}}" alt="">
+								</div>
+								<div class="detail-box">
+									<h6>{{sp.tensp}}</h6>
+									<h6>
+										Giá: <span> {{sp.giasp.toLocaleString('vi-VN')}}đ </span>
+									</h6>
+								</div>
+								<div class="new">
+									<span> Mới nhất </span>
+								</div>
+								<div class="hover-content">
+									<a href=""  ng-click="muangay(sp.masp)" class="btn-detail  ">
+										Mua ngay</a>
+	
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-6 col-xl-3" ng-repeat="sp in sanphams" ng-if="$index > 0">
+						<!-- Nội dung hiển thị của 6 sản phẩm còn lại ban đầu -->
+						<div class="box">
+							<a href=" ">
+								<div class="img-box">
+									<img ng-src="/src/main/webapp/images/sanpham/{{sp.hinhanh}}" alt="">
+								</div>
+								<div class="detail-box">
+									<h6>{{sp.tensp}}</h6>
+									<h6>
+										Giá: <span> {{sp.giasp.toLocaleString('vi-VN')}}đ </span>
+									</h6>
+								</div>
+								<div class="new">
+									<span> Mới </span>
+								</div>
+								<div class="hover-content">
+									<a href="" class="btn-detail " ng-click="muangay(sp.masp)">
+										Mua ngay</a>
+	
+	
+								</div>
+	
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="btn-box">
+					<a ng-click="load_all()" ng-hide="showMore">Xem thêm</a>
+					<a ng-click="load_limit()" ng-show="showMore">Ẩn bớt</a>
+				</div>
+	
+			</div>
+		</section>
+	
+		<!-- end shop section -->
+	
+		<!-- about section -->
+	
+		<section class="about_section layout_padding">
+			<div class="container  ">
+				<div class="row">
+					<div class="col-md-6 col-lg-5 ">
+						<div class="img-box">
+							<img th:src="@{/images/about-img.png}" alt="">
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-7">
+						<div class="detail-box">
+							<div class="heading_container">
+								<h2>Giới thiệu</h2>
+							</div>
+							<p>Đồng hồ điện thoại thông minh ngoài mục đích chính là xem
+								giờ còn có thêm những tính năng vô cùng ưu việt. Có thể kể đến
+								như khả năng báo thức, xem notification hay kiểm tra smartphone.
+								Vậy cụ thể đồng hồ điện thoại thông minh là gì? Chúng tôi sẽ giúp
+								bạn tìm hiểu thông qua bài viết sau bạn nhé!</p>
+							<a href="">Đọc thêm </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+		<!-- end about section -->
+	
+		<!-- feature section -->
+	
+		<section class="feature_section layout_padding">
+			<div class="container">
+				<div class="heading_container">
+					<h2>Tính năng</h2>
+					<p>Dưới đây là một số tính năng Smartwatch đem lại</p>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-lg-3">
+						<div class="box">
+							<div class="img-box">
+								<img th:src="@{/images/f1.png}" alt="">
+							</div>
+							<div class="detail-box">
+								<h5>Theo dõi sức khỏe</h5>
+								<p style="padding: 21px">Tính năng này sẽ xem xét sự chuyển
+									động của bạn để xác định bạn có đang bước đi hay không, sau đó
+									lần lượt sẽ tính được số bước đi đó và hiển thị cho bạn xem theo
+									thời gian thực.</p>
+								<a href=""> <span> Đọc thêm </span> <i class="fa fa-long-arrow-right"
+										aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="box">
+							<div class="img-box">
+								<img th:src="@{/images/f2.png}" alt="">
+							</div>
+							<div class="detail-box">
+								<h5>Cảnh báo & Thông báo</h5>
+								<p style="padding: 23.5px">Tất cả các cuộc hẹn, cảnh báo của
+									bạn có thể được chuyển tới đồng hồ thông minh để cho dù bạn đang
+									chạy thể dục, chơi thể thao thì vẫn không bỏ lỡ các cuộc hẹn đó.</p>
+								<a href=""> <span> Đọc thêm </span> <i class="fa fa-long-arrow-right"
+										aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="box">
+							<div class="img-box">
+								<img th:src="@{/images/f3.png}" alt="">
+							</div>
+							<div class="detail-box">
+								<h5>Nhắn tin</h5>
+								<p style="padding: 31px">Bạn có thể cài đặt rung trên đồng hồ
+									để khi có cuộc gọi hay tin nhắn đến, nó sẽ báo rung để bạn biết
+									mà không cần phải nhìn vào mặt đồng hồ.</p>
+								<a href=""> <span> Đọc thêm </span> <i class="fa fa-long-arrow-right"
+										aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-lg-3">
+						<div class="box">
+							<div class="img-box">
+								<img th:src="@{/images/f4.png}" alt="">
+							</div>
+							<div class="detail-box">
+								<h5>Bluetooth</h5>
+								<p style="padding: 18px">Đây là chức năng không thể thiếu đối
+									với một chiếc đồng hồ đeo tay thông minh, đồng bộ danh bạ, thực
+									hiện cuộc gọi bluetooth, truyền tải dữ liệu từ điện thoại qua
+									đồng hồ đồng hồ thông minh.</p>
+								<a href=""> <span> Đọc thêm </span> <i class="fa fa-long-arrow-right"
+										aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="btn-box">
+					<a href=""> Xem thêm </a>
+				</div>
+			</div>
+		</section>
+	
+		<!-- end feature section -->
+	
+		<!-- contact section -->
+	
+		<section class="contact_section mb-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form_container">
+							<div class="heading_container">
+								<h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
+							</div>
+							<form action="">
+								<div>
+									<input type="text" placeholder="HỌ VÀ TÊN" />
+								</div>
+								<div>
+									<input type="email" placeholder="Email" />
+								</div>
+								<div>
+									<input type="text" placeholder="SỐ ĐIỆN THOẠI" />
+								</div>
+								<div>
+									<input type="text" class="message-box" placeholder="NỘI DUNG" />
+								</div>
+								<div class="d-flex ">
+									<button>GỬI</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="img-box">
+	
+							<img th:src="@{/images/contact-img.jpg}" alt="Contact Image">
+	
+	
+	
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+	</main>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body ng-app="myapp">
+<header class="header_section" ng-controller="watches">
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg custom_nav-container ">
+			<a class="navbar-brand" th:href="@{/index}"> <span> SMARTWATCH
+					NVA3 </span>
+			</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class=""> </span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" th:href="@{/index}">TRANG
+							CHỦ</a></li>
+					<li class="nav-item active"><a class="nav-link" th:href="@{/watches}"> SẢN PHẨM </a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/about}">
+							GIỚI THIỆU </a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/contact}">LIÊN
+							HỆ</a></li>
+				</ul>
+				<div class="user_option-box" >
+					<div class="btn-group">
+						<li type="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span
+								class="fa fa-user"></span> <span class="caret">Xin chào, {{account.hotenkh}}</span>
+						</li>
+						<div class="dropdown-menu dropdown-menu-right" style="width: 150px">
+							<!-- Hiển thị "Đăng kí" và "Đăng nhập" nếu chưa đăng nhập -->
+							<li ng-show="!isLoggedIn"><a href="http://localhost:8080/auth/login/form">Đăng nhập</a>
+							</li>
+							<li ng-show="!isLoggedIn"><a href="http://localhost:8080/auth/login/form">Đăng kí</a>
+							</li>
+							<li ng-show="!isLoggedIn"><a href="">Quên mật khẩu</a></li>
+
+							<!-- Hiển thị "Thông tin" và "Đăng xuất" sau khi đăng nhập -->
+							<li ng-show="isLoggedIn"><a th:href="@{/account}">Thông tin</a></li>
+							<li ng-show="isLoggedIn"><a href="http://localhost:8080/auth/logoff">Đăng xuất</a></li>
+						</div>
+
+
+
+					</div>
+
+					<!-- <a class="nav-item" href="#!/account">
+						<i class="fa fa-shopping-bag" aria-hidden="true"></i>
+					</a> -->
+
+					<a th:href="@{/cart}" class="cart-icon">
+						<i class="fa fa-cart-plus" aria-hidden="true"></i>
+						<!-- Hiển thị số sản phẩm trong giỏ hàng -->
+						<span class="badge">{{getcount()}}</span>
+					</a>
+
+					<input type="text" class="form-control ml-3" placeholder="Bạn muốn tìm gì..?"
+						ng-model="keyword">
+					<div class="input-group-prepend">
+						<a href="" ng-click="timKiemSanPham()"><i class="fa fa-search" aria-hidden="true"></i></a>
+					</div>
+
+				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+</body>
+</html>

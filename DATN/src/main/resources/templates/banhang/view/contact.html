@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{banhang/layout/layout :: banhang(~{::title},~{::main})}">
+
+<head>
+	<meta charset="utf-8">
+	<title>Timups | Liên hệ</title>
+</head>
+
+<body>
+	<main>
+		<!-- contact section -->
+
+		<section class="contact_section layout_padding" style="background-color: lightgray;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form_container">
+							<div class="heading_container">
+								<h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
+							</div>
+							<form action="">
+								<div>
+									<input type="text" placeholder="HỌ VÀ TÊN " />
+								</div>
+								<div>
+									<input type="email" placeholder="EMAIL" />
+								</div>
+								<div>
+									<input type="text" placeholder="SỐ ĐIỆN THOẠI" />
+								</div>
+								<div>
+									<input type="text" class="message-box" placeholder="NỘI DUNG " />
+								</div>
+								<div class="d-flex ">
+									<button>GỬI</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="img-box">
+							<img src="/images/contact-img.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>

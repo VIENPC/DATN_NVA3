@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{banhang/layout/layout :: banhang(~{::title},~{::main})}">
+
+<head>
+	<meta charset="utf-8">
+	<title>Giỏ hàng</title>
+
+</head>
+
+<body>
+	<main>
+	<section class="shoping-cart spad bg-white" ng-controller="watches">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="shoping__cart__table">
+						<table>
+							<thead>
+								<tr>
+									<th class="shoping__product">Sản phẩm</th>
+									<th>Giá</th>
+									<th>Số lượng</th>
+									<th>Tổng tiền</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+
+
+								<tr ng-if="cartItems.length === 0">
+									<td colspan="5" class="text-center">
+										<h4>Giỏ hàng trống!</h4>
+									</td>
+								</tr>
+								<tr ng-repeat="cart in cartItems">
+									<td class="shoping__cart__item"><a href="#!detailproduct/{{cart.masp}}"><img
+												ng-src="/images/sanpham/{{cart.hinhanh}}" alt="">
+											<h5>{{cart.tensp}}</h5>
+										</a>
+									</td>
+									<td class="shoping__cart__price">{{cart.giasp.toLocaleString('vi-VN')}}đ</td>
+									<td class="shoping__cart__quantity ">
+										<div class="quantity d-flex align-items-center ml-3">
+											<!-- Button giảm số lượng -->
+											<button class="btn btn-link px-2"
+												ng-click="cart.qty = cart.qty > 1 ? cart.qty - 1 : 1; saveToLocalStorage()">
+												<i class="fa fa-minus"></i>
+											</button>
+											<!-- Input số lượng -->
+											<input id="form1" min="1" type="number" class="form-control form-control-sm"
+												ng-change="saveToLocalStorage()" ng-model="cart.qty" style="width: 50px"
+												readonly="" onkeydown="return false;">
+											<!-- Button tăng số lượng -->
+											<button class="btn btn-link px-2"
+												ng-click="cart.qty = cart.qty + 1; saveToLocalStorage()">
+												<i class="fa fa-plus"></i>
+											</button>
+										</div>
+									</td>
+
+
+									<td class="shoping__cart__total">
+										{{(cart.qty*cart.giasp).toLocaleString('vi-VN')}}đ</td>
+									<td class="shoping__cart__item__close">
+
+										<a href="" ng-click="removesp(cart.masp)" class="text-muted"><i
+												class="fa fa-times-circle" aria-hidden="true"></i></a>
+									</td>
+
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<form action="checkout" method="post">
+				<div class="row">
+
+					<div class="col-lg-12">
+						<div class="shoping__cart__btns ">
+							<a th:href="@{/watches}" class="primary-btn cart-btn bg-success text-white">Mua thêm</a>
+							<a href="" class="primary-btn cart-btn bg-danger text-white" ng-click="clear()">Xóa tất
+								cả</a>
+						</div>
+
+					</div>
+					<div class="col-lg-6"></div>
+					<div class="col-lg-6">
+						<div class="shoping__checkout">
+
+							<h5>Tổng tiền giỏ hàng</h5>
+							<ul>
+
+								<li>Tạm tính <span>{{totalAmount().toLocaleString('vi-VN')}}đ</span></li>
+
+
+								<li>Tộng cộng: <span> {{totalAmount().toLocaleString('vi-VN')}}đ</span></li>
+
+								<div class="d-flex justify-content-center">
+									<a href="" ng-click="login()" class="btn btn-primary" ng-show="!isLoggedIn">Đăng
+										nhập để thanh toán</a>
+									<button type="submit" class="btn btn-warning" style="width: 300px"
+										ng-show="isLoggedIn">TIẾN HÀNH THANH TOÁN</button> 
+
+									
+								</div>
+								
+
+
+							</ul>
+
+						</div>
+					</div>
+
+				</div>
+			</form>
+
+		</div>
+	</section>
+</main>
+</body>
+
+</html>

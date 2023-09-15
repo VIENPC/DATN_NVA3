@@ -1,0 +1,473 @@
+<style>
+    .user-heading {
+        background: #F4E08A;
+        color: black;
+        border-radius: 4px 4px 0 0;
+        -webkit-border-radius: 4px 4px 0 0;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .user-heading a img {
+        border-radius: 50%;
+        margin-bottom: 5px;
+    }
+
+    .tab-content {
+        padding: 10px;
+
+    }
+
+    .account {
+        background-color: whitesmoke;
+    }
+
+    .gt {
+        margin-top: 35px;
+    }
+
+    /* Tabs Card */
+    .tab-card {
+        border: 1px solid #eee;
+    }
+
+    .tab-card-header {
+        background: none;
+    }
+
+    /* Default mode */
+    .tab-card-header>.nav-tabs {
+        border: none;
+        margin: 0px;
+    }
+
+    .tab-card-header>.nav-tabs>li {
+        margin-right: 2px;
+    }
+
+    .tab-card-header>.nav-tabs>li>a {
+        border: 0;
+        border-bottom: 2px solid transparent;
+        margin-right: 0;
+        color: #737373;
+        padding: 2px 15px;
+    }
+
+    .tab-card-header>.nav-tabs>li>a.show {
+        border-bottom: 2px solid #007bff;
+        color: #007bff;
+    }
+
+    .tab-card-header>.nav-tabs>li>a:hover {
+        color: #007bff;
+    }
+
+    .tab-card-header>.tab-content {
+        padding-bottom: 0;
+    }
+
+    .password-container {
+        position: relative;
+    }
+
+    .password-toggle {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+</style>
+<main class="container account" ng-controller="upaccountctrl">
+    <div class="row">
+        <div class="col-4">
+            <div class="user-heading round">
+                <a href="#">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" width="100px">
+                </a>
+                <h2>{{account.hotenkh}}</h1>
+                    <p>
+                        <a ng-href="mailto:{{account.email | emailProtection}}">{{account.email}}</a>
+                    </p>
+
+            </div>
+
+
+            <div class="list-group" id="list-tab" role="tablist">
+
+                <a class="list-group-item list-group-item-action active" id="list-profile-list" data-toggle="list"
+                    data-target="#list-profile" role="tab" aria-controls="profile">Hồ sơ</a>
+              
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+
+                <div class="tab-pane fade show active" id="list-profile" role="tabpanel"
+                    aria-labelledby="list-profile-list">
+                    <h3>Hồ sơ</h3>
+                    <hr>
+                    <form name="Formupdate">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Họ tên:</label>
+                                <input type="text" class="form-control" ng-model="account.hotenkh" name="hoten"
+                                    placeholder="Tên" required>
+                                <span ng-show="Formupdate.hoten.$error.required && Formupdate.hoten.$dirty"
+                                    class="text-danger">Vui lòng nhập họ tên.</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Email:</label>
+                                <input type="email" class="form-control" ng-model="account.email" name="email"
+                                    placeholder="Email" required>
+                                <span ng-show="Formupdate.email.$error.required && Formupdate.email.$dirty"
+                                    class="text-danger">Vui lòng nhập email.</span>
+                                <span ng-show="Formupdate.email.$error.email && Formupdate.email.$dirty"
+                                    class="text-danger">Email không hợp lệ.</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Điện thoại:</label>
+                                <input type="text" class="form-control" ng-model="account.dienthoai" name="dienthoai"
+                                    placeholder="Điện thoại" required>
+                                <span ng-show="Formupdate.dienthoai.$error.required && Formupdate.dienthoai.$dirty"
+                                    class="text-danger">Vui lòng nhập số điện thoại.</span>
+                            </div>
+                            <div class="form-group col-md-6 gt">
+                                <label for="inputEmail4">Giới tính:</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline1" ng-checked="account.gioitinh === true"
+                                        ng-model="account.gioitinh" value="true" name="gioitinh"
+                                        class="custom-control-input" ng-required="true">
+                                    <label class="custom-control-label" for="customRadioInline1">Nam</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadioInline2" ng-model="account.gioitinh"
+                                        ng-checked="account.gioitinh === false" value="false" name="gioitinh"
+                                        class="custom-control-input" ng-required="true">
+                                    <label class="custom-control-label" for="customRadioInline2">Nữ</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Địa chỉ:</label>
+                            <input type="text" class="form-control" ng-model="account.diachi" name="diachi" required>
+                            <span ng-show="Formupdate.diachi.$error.required && Formupdate.diachi.$dirty"
+                                class="text-danger">Vui lòng nhập địa chỉ.</span>
+                        </div>
+
+                        <button type="button" class="btn btn-success" ng-click="updatetk()"
+                            ng-disabled="Formupdate.$invalid">Cập nhật</button>
+                    </form>
+
+
+
+
+
+
+
+                </div>
+                <div class="tab-pane fade " id="list-order" role="tabpanel" aria-labelledby="list-order-list">
+                    <h3>Đơn hàng</h3>
+                    <div class="card-footer tab-card-header">
+                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" id="one-tab" data-toggle="tab" data-target="#one" role="tab"
+                                    aria-controls="One" aria-selected="true"
+                                    ng-click="getHdId(1, account.usernamekh)">Chờ xác nhận</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="two-tab" data-toggle="tab" data-target="#two" role="tab"
+                                    aria-controls="Two" aria-selected="false"
+                                    ng-click="getHdId(2,account.usernamekh)">Đã xác nhận</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="three-tab" data-toggle="tab" data-target="#three" role="tab"
+                                    aria-controls="Three" aria-selected="false"
+                                    ng-click="getHdId(3,account.usernamekh)">Đang giao</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="four-tab" data-toggle="tab" data-target="#four" role="tab"
+                                    aria-controls="Four" aria-selected="false"
+                                    ng-click="getHdId(4,account.usernamekh)">Hoàn thành</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="five-tab" data-toggle="tab" data-target="#five" role="tab"
+                                    aria-controls="Five" aria-selected="false"
+                                    ng-click="getHdId(5,account.usernamekh)">Đã hủy</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+                            <h4 ng-hide="hoadon.length > 0" class="text-center">Chưa có đơn hàng</h4>
+                            <table ng-if="hoadon.length > 0">
+                                <thead>
+                                    <tr>
+                                        <th width="400px">Tên sản phẩm</th>
+                                        <th width="150px">Số lượng</th>
+                                        <th>Giá</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    <tr ng-repeat="hd in hoadon" ng-show="showAllProducts || $index === 0">
+
+                                        <td>
+                                            <img ng-src="/images/sanpham/{{hd.hinhanh}}" width="50px">
+                                            {{hd.tensp}}
+
+                                        </td>
+                                        <td>
+                                            {{hd.soluong}}
+                                        </td>
+                                        <td>
+                                            {{hd.giasp.toLocaleString('vi-VN')}}đ
+                                        </td>
+                                    </tr>
+
+                                    <tr ng-repeat="hd in hoadon">
+                                        <td ng-if="$index === 0"></td>
+                                        <td ng-if="$index === 0" style="font-weight: bold;">Tổng tiền:</td>
+                                        <td ng-if="$index === 0">{{hd.tongtien.toLocaleString('vi-VN')}}đ</td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                            <h5 ng-if="hoadon.length > 0" ng-hide="showAllProducts">Còn {{hoadon.length-1}} sản phẩm
+                            </h5>
+                            <button ng-click="showAllProducts = !showAllProducts"
+                                ng-show="hoadon.length > 0 && !showAllProducts" class="btn btn-info">Xem tất cả</button>
+
+
+                        </div>
+                        <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
+                            <h4 ng-hide="hoadon.length > 0" class="text-center">Chưa có đơn hàng</h4>
+                            <table ng-if="hoadon.length > 0">
+                                <thead>
+                                    <tr>
+                                        <th width="400px">Tên sản phẩm</th>
+                                        <th width="150px">Số lượng</th>
+                                        <th>Giá</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    <tr ng-repeat="hd in hoadon" ng-show="showAllProducts || $index === 0">
+
+                                        <td>
+                                            <img ng-src="/images/sanpham/{{hd.hinhanh}}" width="50px">
+                                            {{hd.tensp}}
+
+                                        </td>
+                                        <td>
+                                            {{hd.soluong}}
+                                        </td>
+                                        <td>
+                                            {{hd.giasp.toLocaleString('vi-VN')}}đ
+                                        </td>
+                                    </tr>
+
+                                    <tr ng-repeat="hd in hoadon">
+                                        <td ng-if="$index === 0"></td>
+                                        <td ng-if="$index === 0" style="font-weight: bold;">Tổng tiền:</td>
+                                        <td ng-if="$index === 0">{{hd.tongtien.toLocaleString('vi-VN')}}đ</td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                            <h5 ng-if="hoadon.length > 0" ng-hide="showAllProducts">Còn {{hoadon.length-1}} sản phẩm
+                            </h5>
+                            <button ng-click="showAllProducts = !showAllProducts"
+                                ng-show="hoadon.length > 0 && !showAllProducts" class="btn btn-info">Xem tất cả</button>
+                        </div>
+                        <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
+                            <h4 ng-hide="hoadon.length > 0" class="text-center">Chưa có đơn hàng</h4>
+                            <table ng-if="hoadon.length > 0">
+                                <thead>
+                                    <tr>
+                                        <th width="400px">Tên sản phẩm</th>
+                                        <th width="150px">Số lượng</th>
+                                        <th>Giá</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    <tr ng-repeat="hd in hoadon" ng-show="showAllProducts || $index === 0">
+
+                                        <td>
+                                            <img ng-src="/images/sanpham/{{hd.hinhanh}}" width="50px">
+                                            {{hd.tensp}}
+
+                                        </td>
+                                        <td>
+                                            {{hd.soluong}}
+                                        </td>
+                                        <td>
+                                            {{hd.giasp.toLocaleString('vi-VN')}}đ
+                                        </td>
+                                    </tr>
+
+                                    <tr ng-repeat="hd in hoadon">
+                                        <td ng-if="$index === 0"></td>
+                                        <td ng-if="$index === 0" style="font-weight: bold;">Tổng tiền:</td>
+                                        <td ng-if="$index === 0">{{hd.tongtien.toLocaleString('vi-VN')}}đ</td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                            <h5 ng-if="hoadon.length > 0" ng-hide="showAllProducts">Còn {{hoadon.length-1}} sản phẩm
+                            </h5>
+                            <button ng-click="showAllProducts = !showAllProducts"
+                                ng-show="hoadon.length > 0 && !showAllProducts" class="btn btn-info">Xem tất cả</button>
+                        </div>
+                        <div class="tab-pane fade p-4" id="four" role="tabpanel" aria-labelledby="four-tab">
+                            <h4 ng-hide="hoadon.length > 0" class="text-center">Chưa có đơn hàng</h4>
+                            <table ng-if="hoadon.length > 0">
+                                <thead>
+                                    <tr>
+                                        <th width="400px">Tên sản phẩm</th>
+                                        <th width="150px">Số lượng</th>
+                                        <th>Giá</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr ng-repeat="hd in hoadon" ng-show="showAllProducts || $index === 0">
+
+                                        <td>
+                                            <img ng-src="/images/sanpham/{{hd.hinhanh}}" width="50px">
+                                            {{hd.tensp}}
+
+                                        </td>
+                                        <td>
+                                            {{hd.soluong}}
+                                        </td>
+                                        <td>
+                                            {{hd.giasp.toLocaleString('vi-VN')}}đ
+                                        </td>
+                                    </tr>
+
+                                    <tr ng-repeat="hd in hoadon">
+                                        <td ng-if="$index === 0"></td>
+                                        <td ng-if="$index === 0" style="font-weight: bold;">Tổng tiền:</td>
+                                        <td ng-if="$index === 0">{{hd.tongtien.toLocaleString('vi-VN')}}đ</td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                            <h5 ng-if="hoadon.length > 0" ng-hide="showAllProducts">Còn {{hoadon.length-1}} sản phẩm
+                            </h5>
+                            <button ng-click="showAllProducts = !showAllProducts"
+                                ng-show="hoadon.length > 0 && !showAllProducts" class="btn btn-info">Xem tất cả</button>
+                        </div>
+                        <div class="tab-pane fade p-5" id="five" role="tabpanel" aria-labelledby="five-tab">
+                            <h4 ng-hide="hoadon.length > 0" class="text-center">Chưa có đơn hàng</h4>
+                            <table ng-if="hoadon.length > 0">
+                                <thead>
+                                    <tr>
+                                        <th width="400px">Tên sản phẩm</th>
+                                        <th width="150px">Số lượng</th>
+                                        <th>Giá</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    <tr ng-repeat="hd in hoadon" ng-show="showAllProducts || $index === 0">
+
+                                        <td>
+                                            <img ng-src="/images/sanpham/{{hd.hinhanh}}" width="50px">
+                                            {{hd.tensp}}
+
+                                        </td>
+                                        <td>
+                                            {{hd.soluong}}
+                                        </td>
+                                        <td>
+                                            {{hd.giasp.toLocaleString('vi-VN')}}đ
+                                        </td>
+                                    </tr>
+
+                                    <tr ng-repeat="hd in hoadon">
+                                        <td ng-if="$index === 0"></td>
+                                        <td ng-if="$index === 0" style="font-weight: bold;">Tổng tiền:</td>
+                                        <td ng-if="$index === 0">{{hd.tongtien.toLocaleString('vi-VN')}}đ</td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                            <h5 ng-if="hoadon.length > 0" ng-hide="showAllProducts">Còn {{hoadon.length-1}} sản phẩm
+                            </h5>
+                            <button ng-click="showAllProducts = !showAllProducts"
+                                ng-show="hoadon.length > 0 && !showAllProducts" class="btn btn-info">Xem tất cả</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane fade" id="list-pass" role="tabpanel" aria-labelledby="list-pass-list">
+                    <h3>Đổi mật khẩu</h3>
+                    <hr>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="">Tên đăng nhập:</label>
+                                <input type="text" class="form-control" ng-model="account.usernamekh">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">Mật khẩu cũ:</label>
+                                <div class="input-group">
+                                    <input type="{{showOldPassword ? 'text' : 'password'}}" class="form-control"
+                                        placeholder="Nhập lại mật khẩu củ" ng-model="oldPassword" autocomplete="current-password" required>
+                                    <span class="password-toggle" ng-click="showOldPassword = !showOldPassword">
+                                        <i class="fa"
+                                            ng-class="{'fa-eye': showOldPassword, 'fa-eye-slash': !showOldPassword}"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="">Mật khẩu mới</label>
+                                <div class="input-group">
+                                    <input type="{{showNewPassword ? 'text' : 'password'}}" class="form-control"
+                                        placeholder="Mật khẩu mới" ng-model="newPassword" required>
+                                    <span class="password-toggle" ng-click="showNewPassword = !showNewPassword">
+                                        <i class="fa"
+                                            ng-class="{'fa-eye': showNewPassword, 'fa-eye-slash': !showNewPassword}"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">Xác nhận mật khẩu:</label>
+                                <div class="input-group">
+                                    <input type="{{showConfirmPassword ? 'text' : 'password'}}" class="form-control"
+                                        placeholder="Xác nhận mật khẩu" ng-model="confirmPassword" required>
+                                    <span class="password-toggle" ng-click="showConfirmPassword = !showConfirmPassword">
+                                        <i class="fa"
+                                            ng-class="{'fa-eye': showConfirmPassword, 'fa-eye-slash': !showConfirmPassword}"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary" ng-click="changepass()">Đổi mật khẩu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

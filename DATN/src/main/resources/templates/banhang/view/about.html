@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{banhang/layout/layout :: banhang(~{::title},~{::main})}">
+
+<head>
+	<meta charset="utf-8">
+	<title>Timups | Giới thiệu</title>
+</head>
+
+<body>
+	<main>
+		<section class="about_section layout_padding" style="background-color: lightgray; height: 600px">
+			<div class="container  ">
+				<div class="row">
+					<div class="col-md-6 col-lg-5 ">
+						<div class="img-box">
+							<img th:src="@{/images/about-img.png}" alt="">
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-7">
+						<div class="detail-box" style="color: black;">
+							<div class="heading_container">
+								<h2>Về chúng tôi</h2>
+							</div>
+							<p>Đồng hồ điện thoại thông minh ngoài mục đích chính là xem
+								giờ còn có thêm những tính năng vô cùng ưu việt. Có thể kể đến
+								như khả năng báo thức, xem notification hay kiểm tra smartphone.
+								Vậy cụ thể đồng hồ điện thoại thông minh là gì? Chúng tôi sẽ giúp
+								bạn tìm hiểu thông qua bài viết sau bạn nhé!</p>
+							<a href=""> Xem thêm </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>

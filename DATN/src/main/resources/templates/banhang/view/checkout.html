@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{banhang/layout/layout :: banhang(~{::title},~{::main})}">
+
+<head>
+    <meta charset="utf-8">
+    <title>Timups | Sản Phẩm</title>
+    
+    
+    
+   
+</head>
+
+<body ng-app="myapp">
+    
+    <main >    
+        <div id="mainBodyContent" style="background-color: white;" ng-controller="checkctrl">
+            <div class="container  checkoutPage" id="checkout">
+
+
+
+                <div class="grid__row">
+                    <div class="grid__col  grid__col--35  grid__col--push">
+
+                        <div id="cart-summary" class="checkoutPage__summary">
+                            <h2 class="checkoutPage__summaryHeading">Đơn hàng của bạn</h2>
+                            <div class="checkoutPage__summaryBlock">
+                                <table class="checkoutPage__summaryTable">
+                                    <tr>
+                                        <td>Sản phẩm</td>
+                                        <td class="checkoutPage__summaryTableRight">Tạm tính</td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr ng-repeat="cart in cartItems">
+                                        <td>{{cart.tensp}} SL: {{cart.qty}}</td>
+                                        <!-- <input type="hidden" ng-model="masp" value="cart.masp"> -->
+                                        <td class="checkoutPage__summaryTableRight">
+                                            {{(cart.giasp*cart.qty).toLocaleString('vi-VN')}}đ</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="checkoutPage__summaryTable">
+
+                                    <tr>
+                                        <td>Khuyến mãi:</td>
+                                        <td class="checkoutPage__summaryTableRight">0đ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phí vận chuyển</td>
+                                        <td class="checkoutPage__summaryTableRight">0đ</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkoutPage__summaryOrderTotal">Tổng cộng:</td>
+                                        <td class="checkoutPage__summaryTotal">
+                                            {{totalAmount().toLocaleString('vi-VN')}}đ</td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                        <button id="completeYourOrder" data-test="completeOrderBtn"
+                            class="button  button--orange  button--trueLeft" type="button" ng-click="order.purchase()">
+                            Hoàn thành đặt hàng </button>
+                    </div>
+
+                    <div class="grid__col  grid__col--65  grid__col--pull">
+
+                        <form method="post" id="form1" name="form1" novalidate="novalidate">
+
+
+
+                            <div class="checkoutForm">
+
+                                <h3 class="checkoutForm__heading">
+                                    Thông tin thanh toán
+                                </h3>
+
+                                <div class="grid__row">
+                                    <div class="grid__col  grid__col--50">
+                                        <label for="fname" class="checkoutForm__label">Tên người nhận*</label>
+                                        <div class="checkoutForm__inputContainer">
+                                            <input type="text" class="form-control" id="fname" name="fname"
+                                                ng-model="account.hotenkh" />
+                                            <input type="hidden" ng-model="account.usernamekh">
+                                        </div>
+                                    </div>
+                                    <div class="grid__col  grid__col--50">
+                                        <label for="phone" class="checkoutForm__label">Số điện thoại*</label>
+                                        <div class="checkoutForm__inputContainer">
+                                            <input class="form-control" type="tel" name="phone"
+                                                ng-model="account.dienthoai" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__row">
+                                    <div class="grid__col  grid__col--50">
+                                        <label for="email" class="checkoutForm__label">Email*</label>
+                                        <div class="checkoutForm__inputContainer">
+                                            <input class="form-control" type="email" name="email"
+                                                ng-model="account.email" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="checkoutForm">
+                                <h3 class="checkoutForm__heading">
+                                    Địa chỉ nhận hàng
+                                </h3>
+
+                                <div class="grid__row">
+                                    <div class="grid__col  grid__col--50">
+                                        <label for="postalcode" class="checkoutForm__label" autocomplete="">Tỉnh thành
+                                            phố*</label>
+                                        <div class="checkoutForm__inputContainer">
+                                            <select name="" id="province" class="form-control required">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="grid__col  grid__col--50">
+                                        <label for="postalcode" class="checkoutForm__label" autocomplete="">Quận
+                                            huyện*</label>
+                                        <div class="checkoutForm__inputContainer">
+                                            <select name="" id="district" class="form-control">
+                                                <option value="">Chọn quận huyện</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid__row  grid__row--wrap">
+                                    <div class="grid__col  grid__col--50">
+                                        <label for="address1" class="checkoutForm__label">Xã phường*</label>
+                                        <div class="checkoutForm__inputContainer">
+                                            <select name="" id="ward" class="form-control">
+                                                <option value="">Chọn xã phường</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="grid__col  grid__col--50">
+                                        <label for="address4" class="checkoutForm__label">Địa chỉ cụ thể</label>
+                                        <div class="checkoutForm__inputContainer">
+                                            <input class="form-control" type="text" name="" ng-model="dnct"
+                                                placeholder="Ví dụ: số nhà, tổ, ấp" />
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <label for="address4" class="checkoutForm__label">Ghi chú</label>
+                                <div class="checkoutForm__inputContainer">
+                                    <textarea class="form-control" name="" cols="5" rows="5"
+                                        ng-model="ghichu"></textarea>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

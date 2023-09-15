@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản</title>
+    <!-- <link rel="stylesheet" href="/src/main/resources/static/css/sign-in.css"> -->
+    <link rel="stylesheet" th:href="@{/css/sign-in.css}" />
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css}">
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Đăng kí</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+
+                </div>
+                <span>hoặc sử dụng tài khoản của bạn</span>
+                <input type="text" placeholder="Username" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Đăng kí</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Đăng nhập</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+
+                </div>
+                <span>hoặc sử dụng tài khoản của bạn</span>
+                <input type="email" placeholder="Username" />
+                <input type="password" placeholder="Password" />
+                <a href="#">Quên mật khẩu?</a>
+
+                <button>Đăng nhập</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Chào mừng trở lại!</h1>
+                    <p>Để giữ kết nối với chúng tôi, vui lòng đăng nhập bằng thông tin cá nhân của bạn</p>
+                    <button class="ghost" id="signIn">Đăng nhập</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Chào bạn!</h1>
+                    <p>Nhập thông tin cá nhân của bạn và bắt đầu mua sắm với chúng tôi</p>
+                    <button class="ghost" id="signUp">Đăng kí</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    
+
+        const signInButton = document.getElementById('signIn');
+        const signUpButton = document.getElementById('signUp');
+        const container = document.getElementById('container');
+
+        // Kiểm tra xem các biến có tồn tại và có trỏ tới phần tử DOM hay không
+
+        // Gắn sự kiện click vào các nút bằng hàm thông thường
+        signInButton.addEventListener('click', function () {
+            container.classList.remove('right-panel-active');
+        });
+
+        signUpButton.addEventListener('click', function () {
+            container.classList.add('right-panel-active');
+        });
+
+    </script>
+</body>
+
+</html>
