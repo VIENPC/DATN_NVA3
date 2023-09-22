@@ -51,6 +51,9 @@ public class HomeController {
 		return "banhang/view/cart";
 
 	}
+
+	// @RequestMapping("/c")
+
 	@RequestMapping("checkout")
 	public String checkout(){
 		

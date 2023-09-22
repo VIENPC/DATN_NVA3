@@ -35,17 +35,40 @@
 	</header>
 	<main th:replace="${view}"></main>
 
-	<footer  th:insert="~{/banhang/layout/footer.html}"></footer>
+	<footer th:insert="~{/banhang/layout/footer.html}"></footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
-	integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
-	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
 
-<!-- bootstrap js -->
-<script th:src="@{/js/bootstrap.js}"></script>
+	<!-- bootstrap js -->
+	<script th:src="@{/js/bootstrap.js}"></script>
+	<!-- custom script -->
+	<script>
+		const imgs = document.querySelectorAll('.img-select a');
+		const imgBtns = [...imgs];
+		let imgId = 1;
 
-<script src="https://uhchat.net/code.php?f=5398bd"></script>
+		imgBtns.forEach((imgItem) => {
+			imgItem.addEventListener('click', (event) => {
+				event.preventDefault();
+				imgId = imgItem.dataset.id;
+				slideImage();
+			});
+		});
+
+		function slideImage() {
+			const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+
+			document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+		}
+
+		window.addEventListener('resize', slideImage);
+
+
+	</script>
+	<script src="https://uhchat.net/code.php?f=5398bd"></script>
 
 </body>
 
