@@ -340,12 +340,12 @@ a:focus {
 .slider_section .detail-box .btn-box .btn1 {
 	display: inline-block;
 	padding: 12px 15px;
-	background-color: #e6c511;
+	background-color: #ED6436; 
 	color: #ffffff;
 	border-radius: 5px;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
-	border: 1px solid #e6c511;
+	border: 1px solid #ED6436;
 }
 
 .slider_section .detail-box .btn-box .btn1:hover {
@@ -437,7 +437,7 @@ a:focus {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: #f0d43a;
+	background-color: #ED6436;
 	color: #ffffff;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -464,12 +464,12 @@ a:focus {
 .shop_section .btn-box a {
 	display: inline-block;
 	padding: 10px 50px;
-	background-color: #f0d43a;
+	background-color: #ED6436;
 	color: #ffffff;
 	border-radius: 5px;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
-	border: 1px solid #f0d43a;
+	border: 1px solid #ED6436;
 }
 
 .shop_section .btn-box a:hover {
@@ -511,12 +511,12 @@ a:focus {
 .about_section .detail-box a {
 	display: inline-block;
 	padding: 10px 45px;
-	background-color: #f0d43a;
+	background-color: #ED6436;
 	color: #ffffff;
 	border-radius: 5px;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
-	border: 1px solid #f0d43a;
+	border: 1px solid #ED6436;
 	margin-top: 15px;
 }
 
@@ -608,12 +608,12 @@ a:focus {
 .feature_section .btn-box a {
 	display: inline-block;
 	padding: 10px 45px;
-	background-color: #f0d43a;
+	background-color: #ED6436;
 	color: #ffffff;
 	border-radius: 5px;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
-	border: 1px solid #f0d43a;
+	border: 1px solid #ED6436;
 }
 
 .feature_section .btn-box a:hover {
@@ -672,12 +672,12 @@ a:focus {
 	font-family: "Poppins", sans-serif;
 	display: inline-block;
 	padding: 10px 65px;
-	background-color: #f0d43a;
+	background-color: #ED6436;
 	color: #ffffff;
 	border-radius: 3px;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
-	border: 1px solid #f0d43a;
+	border: 1px solid #ED6436;
 	color: #fff;
 	margin-top: 10px;
 }
