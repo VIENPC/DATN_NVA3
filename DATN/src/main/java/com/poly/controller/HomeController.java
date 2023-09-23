@@ -18,6 +18,10 @@ public class HomeController {
 	SanPhamDAO spdao;
 
 	@GetMapping("")
+    public String getindex(){
+        return "banhang/view/index";
+    }
+	@RequestMapping("/index")
     public String index(){
         return "banhang/view/index";
     }

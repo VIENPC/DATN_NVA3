@@ -8,6 +8,26 @@
 
 <body>
 	<main>
+		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" th:src="@{/images/banner2.jpg}" alt="First slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" th:src="@{/images/banner3.jpg}" alt="Second slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" th:src="@{/images/banner4.jpg}" alt="Third slide">
+				</div>
+			</div>
+			<a class="carousel-control-prev" data-target="#carouselExampleControls" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+					class="sr-only">Previous</span>
+			</a> <a class="carousel-control-next" data-target="#carouselExampleControls" role="button"
+				data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span
+					class="sr-only">Next</span>
+			</a>
+		</div>
 		<section class="about_section layout_padding" style="background-color: lightgray; height: 600px">
 			<div class="container  ">
 				<div class="row">
@@ -28,6 +48,97 @@
 								bạn tìm hiểu thông qua bài viết sau bạn nhé!</p>
 							<a href=""> Xem thêm </a>
 						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="row">
+			<div class="work_bg">
+				<div class="wrap">
+					<div class="work" id="work">
+						<div class="main_text1">
+							<h2>our latest work </h2>
+							<h3>some projects we've worked on of late</h3>
+						</div>
+						<!-- start grids_of_2 -->
+						<div class="grids_of_2">
+							<div class="grid_1_of_2">
+								<div class="grid_pic">
+									<img src="images/pic1.jpg" alt="">
+								</div>
+								<div class="grid_text">
+									<h2>runner</h2>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+										Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+										unknown printer took a galley of type and scrambled.</p>
+								</div>
+							</div>
+							<div class="grid_1_of_2">
+								<div class="grid_pic">
+									<img src="images/pic2.jpg" alt="">
+								</div>
+								<div class="grid_text">
+									<h2>velo</h2>
+									<p>There are many variations of passages of Lorem Ipsum but the majority have
+										suffered in some form, by injected humour, or randomised words which don't when
+										an unknown printer took look even slightly believable. </p>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="grids_of_2">
+							<div class="grid_1_of_2">
+								<div class="grid_pic">
+									<img src="images/pic3.jpg" alt="">
+								</div>
+								<div class="grid_text">
+									<h2>harriers</h2>
+									<p>There are many variations of passages of Lorem Ipsum but the majority have
+										suffered in some form, by injected humour, or randomised words which don't when
+										an unknown printer took look even slightly believable. </p>
+								</div>
+							</div>
+							<div class="grid_1_of_2">
+								<div class="grid_pic">
+									<img src="images/pic4.jpg" alt="">
+								</div>
+								<div class="grid_text">
+									<h2>striders</h2>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+										Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+										unknown printer took a galley of type and scrambled.</p>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<!-- end grids_of_2 -->
+						<div class="wrk_btn">
+							<a class="popup-with-zoom-anim" href="#small-dialog">view more projects</a>
+						</div>
+						<!---start-mfp ---->
+						<div id="small-dialog" class="mfp-hide">
+							<div class="pop_up">
+								<h2>project description</h2>
+								<p class="para">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+									accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+									inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+									ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+									consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
+									quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+								<div class="social-icons">
+									<h3>get in touch</h3>
+									<ul>
+										<li><a href="#" target="_blank"></a></li>
+										<li><a href="#" target="_blank"></a></li>
+										<li><a href="#" target="_blank"></a></li>
+										<li><a href="#" target="_blank"></a></li>
+										<li><a href="#" target="_blank"></a></li>
+									</ul>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+						<!---end-mfp ---->
 					</div>
 				</div>
 			</div>
