@@ -17,7 +17,7 @@ public class HomeController {
 	@Autowired
 	SanPhamDAO spdao;
 
-	@GetMapping("/index")
+	@GetMapping("")
     public String index(){
         return "banhang/view/index";
     }
