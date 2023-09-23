@@ -64,4 +64,9 @@ public class HomeController {
 	public String account(){
 		return "banhang/view/account";
 	}
+	
+	@RequestMapping("blog")
+	public String blog() {
+		return "banhang/view/blog";
+	}
 }
