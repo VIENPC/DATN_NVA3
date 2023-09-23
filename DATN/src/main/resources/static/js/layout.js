@@ -13,6 +13,7 @@ app.run(function ($rootScope) {
         $rootScope.loading = false;
         alert("Lỗi");
     });
+    
 });
 
 

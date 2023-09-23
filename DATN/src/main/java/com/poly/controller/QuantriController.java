@@ -20,10 +20,10 @@ public class QuantriController {
     @Autowired
     HoaDonDAO hddao;
 
-	@RequestMapping("/qlnoibo")
-	public String qlnoibo() {
+	@RequestMapping("/qldanhmuc")
+	public String qldanhmuc() {
 		
-		return "admin/view/qlbanned";
+		return "admin/view/qldanhmuc";
 	}
 	@RequestMapping("/baocaochung")
 	public String baocaochung(Model model) {

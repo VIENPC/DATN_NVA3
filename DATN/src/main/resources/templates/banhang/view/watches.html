@@ -8,8 +8,6 @@
 
 <body>
 	<main>
-
-
 		<!-- shop section -->
 		<section class="shop_section layout_padding" style="background-color: gainsboro;" ng-controller="watches">
 			<div class="container">
@@ -69,159 +67,80 @@
 
 
 				<!--Card--shop==================================  -->
-				<div class="card-shop">
-					<div class="row">
-						<h2 style="margin: 0 auto; margin-bottom: 20px; font-weight: bold;">ĐỒNG
-							HỒ MỚI NHẤT</h2>
-						<!--carousel product sản phẩm mới   -->
-						<div id="carouselproduct" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner">
-								<div class="carousel-item active">
-									<div class="card-deck">
-
-										<div class="card" ng-repeat="spnew in sanphamsnew.slice(0, 3)">
-											<a href="#!detailproduct/{{spnew.masp}}"> <img class="card-img-top"
-													ng-src="/images/sanpham/{{spnew.hinhanh}}" alt="Card image cap">
-											</a>
-											<a href="#!detailproduct/{{spnew.masp}}">
-												<div class="card-body">
-
-													<h5 class="card-title" style="font-weight: bold;">{{spnew.tensp}}
-													</h5>
-
-													<h4 class="card-price">{{spnew.giasp.toLocaleString('vi-VN')}}đ</h4>
-
-											</a>
-											<div class="card-btn">
-												<button class="btn btn-primary" ng-click="addToCart(spnew.masp)">
-													<i class="fa-solid fa-cart-shopping"></i>Thêm giỏ hàng
-												</button>
-												<button class="btn btn-danger ml-3" ng-click="muangay(spnew.masp)">Mua
-													ngay</button>
-											</div>
-										</div>
-										</a>
-									</div>
-
-								</div>
-
-							</div>
-							<div class="carousel-item ">
-								<div class="card-deck">
-
-									<div class="card" ng-repeat="spnew in sanphamsnew.slice(3, 6)">
-										<a th:href="@{/watches/detail/{{spnew.masp}}}"> <img class="card-img-top"
-												ng-src="/images/sanpham/{{spnew.hinhanh}}" alt="Card image cap">
-										</a>
-										<a href="#!detailproduct/{{spnew.masp}}">
-											<div class="card-body">
-
-												<h5 class="card-title" style="font-weight: bold;">{{spnew.tensp}}</h5>
-
-												<h4 class="card-price">{{spnew.giasp.toLocaleString('vi-VN')}}đ</h4>
-										</a>
-
-										<div class="card-btn">
-											<button class="btn btn-primary" ng-click="addToCart(spnew.masp)">
-												<i class="fa-solid fa-cart-shopping"></i>Thêm
-												giỏ hàng
-											</button>
-											<button class="btn btn-danger ml-3" ng-click="muangay(spnew.masp)">Mua
-												ngay</button>
-										</div>
-									</div>
-
-								</div>
-
-							</div>
-
-						</div>
 
 
-						<a class="carousel-control-prev" data-target="#carouselproduct" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a> <a class="carousel-control-next" data-target="#carouselproduct" role="button"
-							data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
-					</div>
 
-
-				</div>
-
-			</div>
-			<div class="row">
-				<a href=""
-					style="font-size: 35px; margin: 0 auto; margin-bottom: 20px; font-weight: bold; margin-top: 30px; color: black;"
-					ng-click="load_allsp()">TẤT CẢ SẢN
-					PHẨM</a>
-				<!-- <h2 style="margin: 0 auto; margin-bottom: 20px; font-weight: bold; margin-top: 30px;" ng-click="load_allsp()">TẤT CẢ SẢN
+				<div class="row">
+					<a href=""
+						style="font-size: 35px; margin: 0 auto; margin-bottom: 20px; font-weight: bold; margin-top: 30px; color: black;"
+						ng-click="load_allsp()">TẤT CẢ SẢN
+						PHẨM</a>
+					<!-- <h2 style="margin: 0 auto; margin-bottom: 20px; font-weight: bold; margin-top: 30px;" ng-click="load_allsp()">TẤT CẢ SẢN
 					PHẨM</h2> -->
 
-				<div class="product_all" id="productSection">
-					<div class="filter-sort__title mt-3">Sắp xếp theo</div>
+					<div class="product_all" id="productSection">
+						<div class="filter-sort__title mt-3">Sắp xếp theo</div>
 
-					<div class="filter-sort__list-filter">
-						<!-- Hiển thị mặc định từ "thấp đến cao" khi tải trang -->
-						<a href="" class="btn-filter button__sort" ng-click="sortByPrice()"
-							ng-class="{ 'active': sortOrder }">
-							<i class="fa-solid fa-arrow-down-short-wide"></i> Giá Thấp - Cao
-						</a>
+						<div class="filter-sort__list-filter">
+							<!-- Hiển thị mặc định từ "thấp đến cao" khi tải trang -->
+							<a href="" class="btn-filter button__sort" ng-click="sortByPrice()"
+								ng-class="{ 'active': sortOrder }">
+								<i class="fa-solid fa-arrow-down-short-wide"></i> Giá Thấp - Cao
+							</a>
 
-						<!-- Sắp xếp theo "giá cao đến thấp" khi nhấn vào -->
-						<a href="" class="btn-filter button__sort" ng-click="sortByPrice()"
-							ng-class="{ 'active': !sortOrder }">
-							<i class="fa-solid fa-arrow-down-wide-short"></i>Giá Cao - Thấp
-						</a>
+							<!-- Sắp xếp theo "giá cao đến thấp" khi nhấn vào -->
+							<a href="" class="btn-filter button__sort" ng-click="sortByPrice()"
+								ng-class="{ 'active': !sortOrder }">
+								<i class="fa-solid fa-arrow-down-wide-short"></i>Giá Cao - Thấp
+							</a>
 
 
 
-						<!-- Button trigger modal -->
-						<!-- <a href="" class="btn-filter button__sort"  data-toggle="modal" data-target="#exampleModal"  >
+							<!-- Button trigger modal -->
+							<!-- <a href="" class="btn-filter button__sort"  data-toggle="modal" data-target="#exampleModal"  >
 					<i class="fa-solid fa-arrow-down-wide-short"></i>Giá
 				</a> -->
 
-						<!-- Modal -->
+							<!-- Modal -->
 
 
-					</div>
-					<br>
-					<div class="card_product row">
-						<div ng-if="displayedProducts.length === 0" class="text-center">
-							<h4>Tìm thấy 0 kết quả</h4>
 						</div>
-						<div class="card" style="width: 17rem;"
-							ng-repeat="sp in displayedProducts | orderBy: 'giasp': !sortOrder">
-							<a th:href="@{/watches/detail/{{sp.masp}}}">
-								<img class="card-img-top" ng-src="/images/sanpham/{{sp.hinhanh}}" alt="Card image cap">
-							</a>
-							<div class="card-body">
+						<br>
+						<div class="card_product row">
+							<div ng-if="displayedProducts.length === 0" class="text-center">
+								<h4>Tìm thấy 0 kết quả</h4>
+							</div>
+							<div class="card" style="width: 17rem;"
+								ng-repeat="sp in displayedProducts | orderBy: 'giasp': !sortOrder">
 								<a th:href="@{/watches/detail/{{sp.masp}}}">
-									<h5 class="card-title">{{sp.tensp}}</h5>
-									<h4 class="card-price">{{sp.giasp.toLocaleString('vi-VN')}}đ</h4>
+									<img class="card-img-top" ng-src="/images/sanpham/{{sp.hinhanh}}"
+										alt="Card image cap">
 								</a>
-								<div class="">
-									<button class="btn btn-primary" ng-click="addToCart(sp.masp)">
-										<i class="fa-solid fa-cart-shopping"></i>Giỏ hàng
-									</button>
+								<div class="card-body">
+									<a th:href="@{/watches/detail/{{sp.masp}}}">
+										<h5 class="card-title">{{sp.tensp}}</h5>
+										<h4 class="card-price">{{sp.giasp.toLocaleString('vi-VN')}}đ</h4>
+									</a>
+									<div class="">
+										<button class="btn btn-primary" ng-click="addToCart(sp.masp)">
+											<i class="fa-solid fa-cart-shopping"></i>Giỏ hàng
+										</button>
 
-									<button class="btn btn-danger" ng-click="muangay(sp.masp)">Mua ngay</button>
+										<button class="btn btn-danger" ng-click="muangay(sp.masp)">Mua ngay</button>
+									</div>
 								</div>
+
 							</div>
 
 						</div>
 
+
 					</div>
-
-
 				</div>
-			</div>
-			<div class="btn-box">
-				<a ng-show="showSeeMoreButton" ng-click="loadMoreProducts()">Xem thêm</a>
-				<a ng-show="!showSeeMoreButton" ng-click="hideProducts()">Ẩn bớt</a>
-			</div>
+				<div class="btn-box">
+					<a ng-show="showSeeMoreButton" ng-click="loadMoreProducts()">Xem thêm</a>
+					<a ng-show="!showSeeMoreButton" ng-click="hideProducts()">Ẩn bớt</a>
+				</div>
 		</section>
 	</main>
 </body>

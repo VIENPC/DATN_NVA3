@@ -222,7 +222,10 @@ function editProduct(button) {
 
 	// Hiển thị modal
 	$("#ModalUP").modal("show");
+	
+	
 }
+
 
 
 

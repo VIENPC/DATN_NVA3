@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Trang Quản Lý</title>
+	<title th:replace="${title}"></title>
 	<!-- site icon -->
 	<link rel="shortcut icon" th:href="@{/images/fevicon.png}" type="image/x-icon">
 
@@ -43,6 +43,8 @@
 	<script th:src="@{https://code.jquery.com/jquery-3.6.0.min.js}"></script>
 
 	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	
+
 
 	<style>
 		.mgs_errors {
@@ -88,6 +90,8 @@
 						<li><a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
 									class="fa fa-table purple_color2"></i> <span>Quản lý</span></a>
 							<ul class="collapse list-unstyled" id="element">
+								<li><a th:href="@{/admin/qldanhmuc}">> <span>Danh mục
+								</span></a></li>
 								<li><a th:href="@{/admin/qlsanpham}">> <span>Sản phẩm
 										</span></a></li>
 								<li><a th:href="@{/admin/qldonhang}">> <span>Đơn hàng</span></a></li>
@@ -268,10 +272,12 @@
 	<script type="text/javascript" th:src="@{/plugins/dataTables.bootstrap.min.js}"></script>
 
 	<!-- custom js -->
-	<script th:src="@{/js/custom.js}"></script>
+	 <script th:src="@{/js/custom.js}"></script>
 
-
-
+	
+	
+	
+	 
 
 </body>
 
