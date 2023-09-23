@@ -17,7 +17,16 @@ public class HomeController {
 	@Autowired
 	SanPhamDAO spdao;
 
+<<<<<<< Updated upstream
 	@GetMapping("/index")
+=======
+	@GetMapping("")
+    public String getindex(){
+        return "banhang/view/index";
+    }
+	
+	@RequestMapping("/index")
+>>>>>>> Stashed changes
     public String index(){
         return "banhang/view/index";
     }
