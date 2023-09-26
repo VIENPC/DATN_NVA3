@@ -204,7 +204,7 @@ app.controller("watches", function ($scope, $http, $anchorScroll, $location) {
                 $scope.saveToLocalStorage();
 
             })
-        }
+        } 
 
         swal("Thành công", "Thêm sản phẩm vào giỏ hàng thành công!", "success")
 
@@ -280,7 +280,7 @@ app.controller("watches", function ($scope, $http, $anchorScroll, $location) {
             ).slice(0, $scope.productsPerPage);
             $scope.showSeeMoreButton = $scope.totalProducts > $scope.productsPerPage;
             console.log("Success", resp);
-        }).catch(error => {
+        }).catch(error => { 
             console.log("Error", error);
         });
     };

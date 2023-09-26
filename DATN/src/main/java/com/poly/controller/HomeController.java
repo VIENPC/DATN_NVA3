@@ -39,6 +39,11 @@ public class HomeController {
 	public String contact() {
 		return "banhang/view/contact";
 	}
+	@RequestMapping("news")
+	public String news() {
+		return "banhang/view/news";
+	}
+	
 
 	@RequestMapping("/watches/detail/{masp}")
 	public String detail(Model model, @PathVariable("masp") Integer id) {

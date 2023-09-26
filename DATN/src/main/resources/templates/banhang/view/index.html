@@ -8,111 +8,114 @@
 
 <body>
 	<main>
-		<section class="slider_section ">
-			<div id="customCarousel1" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<div class="container-fluid ">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="detail-box">
-										<h1>Smart Watches</h1>
-										<p>Mẫu Forerunner 265 bao gồm hai biến thể Forerunner 265S
-											42mm và Forerunner 265 46mm. Mẫu 265S cung cấp thời lượng pin
-											lên đến 24 giờ ở chế độ GPS và tối đa 15 ngày ở chế độ
-											smartwatch. Trong khi đó, mẫu 265 cung cấp thời lượng pin lên
-											đến 20 giờ ở chế độ GPS và 13 ngày ở chế độ smartwatch.</p>
-										<div class="btn-box">
-											<a href="#!contact" class="btn1" > Liên hệ </a>
+		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" th:src="@{/images/banner2.jpg}" alt="First slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" th:src="@{/images/banner3.jpg}" alt="First slide">
+
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" th:src="@{/images/banner4.jpg}" alt="First slide">
+
+				</div>
+			</div>
+			<a class="carousel-control-prev" data-target="#carouselExampleControls" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+					class="sr-only">Previous</span>
+			</a> <a class="carousel-control-next" data-target="#carouselExampleControls" role="button"
+				data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span
+					class="sr-only">Next</span>
+			</a>
+		</div>
+		<!-- end slider section -->
+
+		<!-- Start category Area -->
+		<section class="category-area mt-5">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-8 col-md-12">
+						<div class="row">
+							<div class="col-lg-8 col-md-8">
+								<div class="single-deal">
+									<div class="overlay"></div>
+									<img class="img-fluid w-100" th:src="@{images/sd/test.jpg}" alt="">
+									<a class="img-pop-up" target="_blank">
+										<div class="deal-details">
+											<h6 class="deal-title">Đồng hồ thời trang</h6>
 										</div>
-									</div>
+									</a>
 								</div>
-								<div class="col-md-6">
-									<div class="img-box">
-										<img th:src="@{/images/garmin.png}" alt="">
-									</div>
+							</div>
+							<div class="col-lg-4 col-md-4">
+								<div class="single-deal">
+									<div class="overlay"></div>
+									<img class="img-fluid w-100" th:src="@{images/sd/1.jpg}" alt="">
+									<a class="img-pop-up" target="_blank">
+										<div class="deal-details">
+											<h6 class="deal-title">đồng hồ thông minh</h6>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4">
+								<div class="single-deal">
+									<div class="overlay"></div>
+									<img class="img-fluid w-100" th:src="@{images/sd/nam.jpg}" alt="">
+									<a class="img-pop-up" target="_blank">
+										<div class="deal-details">
+											<h6 class="deal-title">Đồng hồ nam</h6>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-lg-8 col-md-8">
+								<div class="single-deal">
+									<div class="overlay"></div>
+									<img class="img-fluid w-100" th:src="@{images/sd/Dong_ho_nu.jpg}" alt="">
+									<a th:href="@{images/sd/Dong_ho_nu.jpg}" class="img-pop-up" target="_blank">
+										<div class="deal-details">
+											<h6 class="deal-title">Đồng hồ nữ</h6>
+										</div>
+									</a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="carousel-item ">
-						<div class="container-fluid ">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="detail-box">
-										<h1>Smart Watches</h1>
-										<p>Garmin đã ra mắt một chiếc đồng hồ thông minh khác, có
-											tên là Forerunner 55, tập trung vào người chạy bộ và đặc biệt
-											là những người mới bắt đầu tham gia hoạt động này. Đồng hồ cho
-											phép người dùng theo dõi số liệu thống kê về hoạt động chạy
-											hoặc đi bộ của họ theo thời gian.</p>
-										<div class="btn-box">
-											<a href="" class="btn1" > Liên hệ </a>
-										</div>
-									</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="single-deal">
+							<div class="overlay"></div>
+							<img class="img-fluid w-100" th:src="@{images/sd/c5.jpg}" alt="">
+							<a class="img-pop-up" target="_blank">
+								<div class="deal-details">
+									<h6 class="deal-title">Watch for Sports</h6>
 								</div>
-								<div class="col-md-6">
-									<div class="img-box">
-										<img th:src="@{/images/Garmin3.png}" alt="">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="carousel-item ">
-						<div class="container-fluid ">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="detail-box">
-										<h1>Smart Watches</h1>
-										<p>Đồng hồ đeo tay thông minh hay smartwatch là một thiết
-											bị có chức năng, kiểu dáng, cách sử dụng cơ bản gần giống như
-											đồng hồ truyền thống nhưng được bổ sung thêm nhiều tính năng
-											thông minh giống như của smartphone như lên mạng, xem thông
-											báo hoặc đo nhịp tim. So với đồng hồ thông thường, các đồng hồ
-											thông minh còn có màn hình màu, khe cắm sim, thẻ nhớ hoặc thậm
-											chí tích hợp cả camera</p>
-										<div class="btn-box">
-											<a href="" class="btn1"> Liên hệ </a>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="img-box">
-										<img th:src="@{/images/test2.png}" alt="">
-									</div>
-								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 				</div>
-				<ol class="carousel-indicators">
-					<li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-					<li data-target="#customCarousel1" data-slide-to="1"></li>
-					<li data-target="#customCarousel1" data-slide-to="2"></li>
-				</ol>
 			</div>
-	
 		</section>
-		<!-- end slider section -->
-		
-	
-	
+		<!-- End category Area -->
+
 		<!-- shop section -->
-	
+
 		<section class="shop_section layout_padding" ng-controller="homectrl">
 			<div class="container" id="productSection">
-				 <div class="d-flex flex-column text-center mb-5">
-			 <h1 class="display-4 m-0"><span class="font-weight-bold" style="color:#ED6436">Sản Phẩm</span> Mới</h1>
-            
-        </div>
+				<div class="d-flex flex-column text-center mb-5">
+					<h1 class="display-4 m-0"><span class="font-weight-bold" style="color:#ED6436">Sản Phẩm</span> Mới
+					</h1>
+
+				</div>
 				<div class="row">
 					<div class="col-md-6" ng-repeat="sp in sanphams" ng-if="$index === 0">
 						<!-- Nội dung hiển thị của sản phẩm thứ nhất -->
 						<div class="box">
 							<a href="">
 								<div class="img-box">
-									<img ng-src="/src/main/webapp/images/sanpham/{{sp.hinhanh}}" alt="">
+									<img ng-src="/images/sanpham/{{sp.hinhanh}}" alt="">
 								</div>
 								<div class="detail-box">
 									<h6>{{sp.tensp}}</h6>
@@ -124,9 +127,9 @@
 									<span> Mới nhất </span>
 								</div>
 								<div class="hover-content">
-									<a href=""  ng-click="muangay(sp.masp)" class="btn-detail  ">
+									<a href="" ng-click="muangay(sp.masp)" class="btn-detail  ">
 										Mua ngay</a>
-	
+
 								</div>
 							</a>
 						</div>
@@ -150,10 +153,10 @@
 								<div class="hover-content">
 									<a href="" class="btn-detail " ng-click="muangay(sp.masp)">
 										Mua ngay</a>
-	
-	
+
+
 								</div>
-	
+
 							</a>
 						</div>
 					</div>
@@ -162,253 +165,127 @@
 					<a ng-click="load_all()" ng-hide="showMore">Xem thêm</a>
 					<a ng-click="load_limit()" ng-show="showMore">Ẩn bớt</a>
 				</div>
-	
+
 			</div>
 		</section>
-	
+
 		<!-- end shop section -->
-	
+
 		<!-- about section -->
-	
-	<!-- 	<section class="about_section layout_padding">
-			<div class="container  ">
-				<div class="row">
-					<div class="col-md-6 col-lg-5 ">
-						<div class="img-box">
-							<img th:src="@{/images/about-img.png}" alt="">
+
+
+		<!-- Booking Start -->
+		<!-- <div class="container-fluid bg-light">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-5">
+						<div class=" py-5 px-4 px-sm-5" style="background-color:#ED6436">
+							<form class="py-5">
+								<div class="form-group">
+									<input type="text" class="form-control border-0 p-4" placeholder="Tên của bạn"
+										required="required" />
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control border-0 p-4" placeholder="Email của bạn"
+										required="required" />
+								</div>
+								<div class="form-group">
+									<div class="date" id="date" data-target-input="nearest">
+										<input type="text" class="form-control border-0 p-4 datetimepicker-input"
+											placeholder="Ngày đăng kí" data-target="#date"
+											data-toggle="datetimepicker" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="time" id="time" data-target-input="nearest">
+										<input type="text" class="form-control border-0 p-4 datetimepicker-input"
+											placeholder="Thời gian đăng kí" data-target="#time"
+											data-toggle="datetimepicker" />
+									</div>
+								</div>
+								<div class="form-group">
+									<select class="custom-select border-0 px-4" style="height: 47px;">
+										<option selected>Chọn Dịch Vụ</option>
+										<option value="1">Gói dịch vụ 1</option>
+										<option value="2">Gói dịch vụ 2</option>
+										<option value="3">Gói dịch vụ 3</option>
+									</select>
+								</div>
+								<div>
+									<button class="btn btn-dark btn-block border-0 py-3" type="submit">Đặt Ngay</button>
+								</div>
+							</form>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-7">
-						<div class="detail-box">
-							<div class="heading_container">
-								<h2>Giới thiệu</h2>
+					<div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
+						<h4 class="text-success mb-3">Bạn đang quan tâm tới các sản phẩm mới?</h4>
+						<h1 class="display-4 mb-4 font-weight-bold">Đặt hàng <span class=""
+								style="color:#ED6436">Ngay</span></h1>
+						<p>Với việc đặt trước sản phẩm , bạn sẽ là một trong những khách hàng đầu tiên mua được sản phẩm
+							khi sản phẩm ra mắt</p>
+						<div class="row py-2">
+							<div class="col-sm-6">
+								<div class="d-flex flex-column">
+									<div class="d-flex align-items-center mb-2">
+
+										<img th:src="@{/images/free-shipping.png}" class="  font-weight-normal m-0 mr-3"
+											alt="" height="45px">
+										<h5 class="text-truncate m-0">Miễn phí giao hàng</h5>
+									</div>
+									<p>Miễn phí giao hàng cho tất cả các sản phẩm được đặt trước</p>
+								</div>
 							</div>
-							<p>Đồng hồ điện thoại thông minh ngoài mục đích chính là xem
-								giờ còn có thêm những tính năng vô cùng ưu việt. Có thể kể đến
-								như khả năng báo thức, xem notification hay kiểm tra smartphone.
-								Vậy cụ thể đồng hồ điện thoại thông minh là gì? Chúng tôi sẽ giúp
-								bạn tìm hiểu thông qua bài viết sau bạn nhé!</p>
-							<a href="">Đọc thêm </a>
+							<div class="col-sm-6">
+								<div class="d-flex flex-column">
+									<div class="d-flex align-items-center mb-2">
+										<img th:src="@{/images/product-return.png}"
+											class="  font-weight-normal m-0 mr-3" alt="" height="45px">
+										<h5 class="text-truncate m-0">Bảo hành miễn phí</h5>
+									</div>
+									<p>Bảo hành 1 đổi 1 trong vòng 1 năm nếu có lỗi từ nhà sản xuất</p>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="d-flex flex-column">
+									<div class="d-flex align-items-center mb-2">
+										<img th:src="@{/images/call-center.png}" class="  font-weight-normal m-0 mr-3"
+											alt="" height="45px">
+										<h5 class="text-truncate m-0">Chăm sóc khách hàng 24/7</h5>
+									</div>
+									<p class="m-0">Tận tình tư vấn và hỗ trợ kĩ thuật 24/7</p>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="d-flex flex-column">
+									<div class="d-flex align-items-center mb-2">
+										<img th:src="@{/images/money.png}" class="  font-weight-normal m-0 mr-3" alt=""
+											height="45px">
+										<h5 class="text-truncate m-0">Đổi trả miễn phí</h5>
+									</div>
+									<p class="m-0">Đổi trả miễn phí nếu có các lỗi từ nhà sản xuất</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-	 -->
-		<!-- end about section --> 
-	 <!-- Booking Start -->
-    <div class="container-fluid bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class=" py-5 px-4 px-sm-5" style="background-color:#ED6436">
-                        <form class="py-5">
-                            <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Tên của bạn" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control border-0 p-4" placeholder="Email của bạn" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <div class="date" id="date" data-target-input="nearest">
-                                    <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Ngày đăng kí" data-target="#date" data-toggle="datetimepicker"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="time" id="time" data-target-input="nearest">
-                                    <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Thời gian đăng kí" data-target="#time" data-toggle="datetimepicker"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <select class="custom-select border-0 px-4" style="height: 47px;">
-                                    <option selected>Chọn Dịch Vụ</option>
-                                    <option value="1">Gói dịch vụ 1</option>
-                                    <option value="2">Gói dịch vụ 2</option>
-                                    <option value="3">Gói dịch vụ 3</option>
-                                </select>
-                            </div>
-                            <div>
-                                <button class="btn btn-dark btn-block border-0 py-3" type="submit">Đặt Ngay</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
-                    <h4 class="text-success mb-3">Bạn đang quan tâm tới các sản phẩm mới?</h4>
-                    <h1 class="display-4 mb-4 font-weight-bold">Đặt hàng <span class="" style="color:#ED6436">Ngay</span></h1>
-                    <p>Với việc đặt trước sản phẩm , bạn sẽ là một trong những khách hàng đầu tiên mua được sản phẩm khi sản phẩm ra mắt</p>
-                    <div class="row py-2">
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-2">
-                                    
-                                    <img th:src="@{/images/free-shipping.png}"class="  font-weight-normal m-0 mr-3" alt="" height="45px"> 
-                                    <h5 class="text-truncate m-0">Miễn phí giao hàng</h5>
-                                </div>
-                                <p>Miễn phí giao hàng cho tất cả các sản phẩm được đặt trước</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-2">
-                                    <img th:src="@{/images/product-return.png}"class="  font-weight-normal m-0 mr-3" alt="" height="45px">
-                                    <h5 class="text-truncate m-0">Bảo hành miễn phí</h5>
-                                </div>
-                                <p>Bảo hành 1 đổi 1 trong vòng 1 năm nếu có lỗi từ nhà sản xuất</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-2">
-                                   <img th:src="@{/images/call-center.png}"class="  font-weight-normal m-0 mr-3" alt="" height="45px">
-                                    <h5 class="text-truncate m-0">Chăm sóc khách hàng 24/7</h5>
-                                </div>
-                                <p class="m-0">Tận tình tư vấn và hỗ trợ kĩ thuật 24/7</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-2">
-                                   <img th:src="@{/images/money.png}"class="  font-weight-normal m-0 mr-3" alt="" height="45px">
-                                    <h5 class="text-truncate m-0">Đổi trả miễn phí</h5>
-                                </div>
-                                <p class="m-0">Đổi trả miễn phí nếu có các lỗi từ nhà sản xuất</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Booking End -->
-		
-		
-		    	<!-- start features Area -->
-	<section class="features-area section_gap mt-5">
-		<div class="container">
-			<div class="row features-inner">
-				<!-- single features -->
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="single-features">
-						<div class="f-icon">
-							<img th:src="@{/images/free-shipping.png}" alt="" height="45px">  
-						</div>
-						<h6 class="font-weight-bold">Free Delivery</h6>
-						<p>Free Shipping on all order</p>
-					</div>
-				</div>
-				<!-- single features -->
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="single-features"> 
-						<div class="f-icon">
-							<img th:src="@{/images/product-return.png}" alt="" height="45px"> 
-						</div>
-						<h6 class="font-weight-bold">Return Policy</h6>
-						<p>Free Shipping on all order</p>
-					</div>
-				</div>
-				<!-- single features -->
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="single-features">
-						<div class="f-icon">
-							<img th:src="@{/images/call-center.png}" alt="" height="45px">
-						</div>
-						<h6 class="font-weight-bold">24/7 Support</h6>
-						<p>Free Shipping on all order</p>
-					</div>
-				</div>
-				<!-- single features -->
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<div class="single-features">
-						<div class="f-icon">
-							<img th:src="@{/images/money.png}" alt="" height="45px">
-						</div>
-						<h6 class="font-weight-bold">Secure Payment</h6>
-						<p>Free Shipping on all order</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- end features Area -->
-	
-	<!-- Start category Area -->
-	<section class="category-area mt-5">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 col-md-12">
-					<div class="row">
-						<div class="col-lg-8 col-md-8">
-							<div class="single-deal">
-								<div class="overlay"></div>
-								<img class="img-fluid w-100" th:src="@{images/sd/test.jpg}" alt="">
-								<a  class="img-pop-up" target="_blank">
-									<div class="deal-details">
-										<h6 class="deal-title">Mechanical Wristwatch</h6>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4">
-							<div class="single-deal">
-								<div class="overlay"></div>
-								<img class="img-fluid w-100" th:src="@{images/sd/1.jpg}" alt="">
-								<a  class="img-pop-up" target="_blank">
-									<div class="deal-details">
-										<h6 class="deal-title">SmartWatches</h6>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4">
-							<div class="single-deal">
-								<div class="overlay"></div>
-								<img class="img-fluid w-100" th:src="@{images/sd/2.png}" alt="">
-								<a  class="img-pop-up" target="_blank">
-									<div class="deal-details">
-										<h6 class="deal-title">Stylish smartwatches</h6>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="col-lg-8 col-md-8">
-							<div class="single-deal">
-								<div class="overlay"></div>
-								<img class="img-fluid w-100" th:src="@{images/sd/Dong_ho_nu.jpg}" alt="">
-								<a th:href="@{images/sd/Dong_ho_nu.jpg}" class="img-pop-up" target="_blank">
-									<div class="deal-details">
-										<h6 class="deal-title">Women's Wristwatch</h6>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-deal">
-						<div class="overlay"></div>
-						<img class="img-fluid w-100" th:src="@{images/sd/c5.jpg}" alt="">
-						<a  class="img-pop-up" target="_blank">
-							<div class="deal-details">
-								<h6 class="deal-title">Watch for Sports</h6>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End category Area -->
-	
-	<!-- feature section -->
-	
+		</div>  -->
+		<!-- Booking End-->
+
+
+
+
+
+		<!-- feature section -->
+
 		<section class="feature_section layout_padding">
 			<div class="container">
-			 <div class="d-flex flex-column text-center mb-5">
-			 <h1 class="display-4 m-0">Các <span class="font-weight-bold" style="color:#ED6436">Tính năng</span> </h1>
-            <h4 class="text-success mb-3">Dưới đây là một số tính năng mà Smartwatch mang lại</h4>
-        </div>
-				
+				<div class="d-flex flex-column text-center mb-5">
+					<h1 class="display-4 m-0">Các <span class="font-weight-bold" style="color:#ED6436">Tính năng</span>
+					</h1>
+					<h4 class="text-success mb-3">Dưới đây là một số tính năng mà Smartwatch mang lại</h4>
+				</div>
+
 				<div class="row">
 					<div class="col-sm-6 col-lg-3">
 						<div class="box">
@@ -477,115 +354,125 @@
 						</div>
 					</div>
 				</div>
-				<div class="btn-box font-weight-larger" >
+				<div class="btn-box font-weight-larger">
 					<a href=""> Xem thêm </a>
 				</div>
 			</div>
 		</section>
-	
+
 		<!-- end feature section -->
-	
-		<!-- contact section -->
-	<!-- 
-		<section class="contact_section mb-5">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="form_container">
-							<div class="heading_container">
-								<h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
+
+
+		<!-- Blog Start -->
+		<div class="container pt-5">
+			<div class="d-flex flex-column text-center mb-5">
+				<h4 class="text-success mb-3">Blogs Công Nghệ</h4>
+				<h1 class="display-4 m-0"><span class="font-weight-bold" style="color:#ED6436">Cập nhật từ</span> Blog
+				</h1>
+			</div>
+			<div class="row pb-3">
+				<div class="col-lg-4 mb-4">
+					<div class="card border-0 mb-2">
+						<img class="card-img-top ml-0" th:src="@{images/apple-watch-series7.jpg}" alt="">
+						<div class="card-body p-4">
+							<h4 class="card-title text-truncate">Ra mắt Apple Watch Series 7</h4>
+							<div class="d-flex mb-3">
+								<small class="mr-2"><i class="fa fa-user text-muted"></i> QuocHung</small>
+								<small class="mr-2"><i class="fa fa-folder text-muted"></i> Web Design</small>
+								<small class="mr-2"><i class="fa fa-comments text-muted"></i> 999+</small>
 							</div>
-							<form action="">
-								<div>
-									<input type="text" placeholder="HỌ VÀ TÊN" />
-								</div>
-								<div>
-									<input type="email" placeholder="Email" />
-								</div>
-								<div>
-									<input type="text" placeholder="SỐ ĐIỆN THOẠI" />
-								</div>
-								<div>
-									<input type="text" class="message-box" placeholder="NỘI DUNG" />
-								</div>
-								<div class="d-flex ">
-									<button>GỬI</button>
-								</div>
-							</form>
+							<p>SỰ KIỆN RA MẮT APPLE WATCH SERIES 7 - ĐÁNH GIÁ CHI TIẾT </p>
+							<a class="font-weight-bold text-success" th:href="@{/blog}">Đọc thêm</a>
 						</div>
 					</div>
-					<div class="col-md-6">
-						<div class="img-box">
-	
-							<img th:src="@{/images/contact-img.jpg}" alt="Contact Image">
-	
-	
-	
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="card border-0 mb-2">
+						<img class="card-img-top ml-0" th:src="@{images/danh-gia-wonlex-kt1723.png}" alt="">
+						<div class="card-body  p-4">
+							<h4 class="card-title text-truncate">Đánh Giá Wonlex KT17</h4>
+							<div class="d-flex mb-3">
+								<small class="mr-2"><i class="fa fa-user text-muted"></i> Admin</small>
+								<small class="mr-2"><i class="fa fa-folder text-muted"></i> Web Design</small>
+								<small class="mr-2"><i class="fa fa-comments text-muted"></i> 130303</small>
+							</div>
+							<p>ĐÁNH GIÁ WONLEX KT17, ĐỒNG HỒ THÔNG MINH CHO BÉ TỐT NHẤT 2023</p>
+							<a class="font-weight-bold text-success" th:href="@{/blog}">Đọc thêm</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4">
+					<div class="card border-0 mb-2">
+						<img class="card-img-top ml-0" th:src="@{images/danh-gia-watch-s8-ultra-lte15.png}" alt="">
+						<div class="card-body p-4">
+							<h4 class="card-title text-truncate">Đánh giá Watch S8 Ultra</h4>
+							<div class="d-flex mb-3">
+								<small class="mr-2"><i class="fa fa-user text-muted"></i> Admin</small>
+								<small class="mr-2"><i class="fa fa-folder text-muted"></i> Web Design</small>
+								<small class="mr-2"><i class="fa fa-comments text-muted"></i> 1303</small>
+							</div>
+							<p>ĐÁNH GIÁ WATCH S8 ULTRA LTE, ĐỒNG HỒ THÔNG MINH TỐT NHẤT</p>
+							<a class="font-weight-bold text-success" th:href="@{/blog}">Đọc thêm</a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</div>
+		<!-- Blog End -->
 
-	<!-- Blog Start -->
-    <div class="container pt-5">
-        <div class="d-flex flex-column text-center mb-5">
-            <h4 class="text-success mb-3">Blogs Công Nghệ</h4>
-            <h1 class="display-4 m-0"><span class="font-weight-bold" style="color:#ED6436">Cập nhật từ</span> Blog</h1>
-        </div>
-        <div class="row pb-3">
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 mb-2">
-                    <img class="card-img-top ml-0" th:src="@{images/apple-watch-series7.jpg}" alt="">
-                    <div class="card-body p-4">
-                        <h4 class="card-title text-truncate">Ra mắt Apple Watch Series 7</h4>
-                        <div class="d-flex mb-3">
-                            <small class="mr-2"><i class="fa fa-user text-muted"></i> QuocHung</small>
-                            <small class="mr-2"><i class="fa fa-folder text-muted"></i> Web Design</small>
-                            <small class="mr-2"><i class="fa fa-comments text-muted"></i> 999+</small>
-                        </div>
-                        <p>SỰ KIỆN RA MẮT APPLE WATCH SERIES 7 - ĐÁNH GIÁ CHI TIẾT </p>
-                        <a class="font-weight-bold text-success" th:href="@{/blog}">Đọc thêm</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 mb-2">
-                    <img class="card-img-top ml-0" th:src="@{images/danh-gia-wonlex-kt1723.png}" alt="" >
-                    <div class="card-body  p-4">
-                        <h4 class="card-title text-truncate">Đánh Giá Wonlex KT17</h4>
-                        <div class="d-flex mb-3">
-                            <small class="mr-2"><i class="fa fa-user text-muted"></i> Admin</small>
-                            <small class="mr-2"><i class="fa fa-folder text-muted"></i> Web Design</small>
-                            <small class="mr-2"><i class="fa fa-comments text-muted"></i> 130303</small>
-                        </div>
-                        <p>ĐÁNH GIÁ WONLEX KT17, ĐỒNG HỒ THÔNG MINH CHO BÉ TỐT NHẤT 2023</p>
-                        <a class="font-weight-bold text-success" th:href="@{/blog}">Đọc thêm</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 mb-2">
-                    <img class="card-img-top ml-0" th:src="@{images/danh-gia-watch-s8-ultra-lte15.png}" alt="" >
-                    <div class="card-body p-4">
-                        <h4 class="card-title text-truncate">Đánh giá Watch S8 Ultra</h4>
-                        <div class="d-flex mb-3">
-                            <small class="mr-2"><i class="fa fa-user text-muted"></i> Admin</small>
-                            <small class="mr-2"><i class="fa fa-folder text-muted"></i> Web Design</small>
-                            <small class="mr-2"><i class="fa fa-comments text-muted"></i> 1303</small>
-                        </div>
-                        <p>ĐÁNH GIÁ WATCH S8 ULTRA LTE, ĐỒNG HỒ THÔNG MINH TỐT NHẤT</p>
-                        <a class="font-weight-bold text-success" th:href="@{/blog}">Đọc thêm</a> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog End -->
 
+
+		<!-- start features Area -->
+		<section class="features-area section_gap mt-5">
+			<div class="container">
+				<div class="row features-inner">
+					<!-- single features -->
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-features">
+							<div class="f-icon">
+								<img th:src="@{/images/free-shipping.png}" alt="" height="45px">
+							</div>
+							<h6 class="font-weight-bold">Giao Hàng Miễn Phí</h6>
+							<p>Miễn phí vận chuyển mọi đơn hàng</p>
+						</div>
+					</div>
+					<!-- single features -->
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-features">
+							<div class="f-icon">
+								<img th:src="@{/images/product-return.png}" alt="" height="45px">
+							</div>
+							<h6 class="font-weight-bold">Bảo Hành Miễn Phí</h6>
+							<p>Bảo hành 1 đổi 1 trong vòng 1 năm nếu có lỗi từ nhà sản xuất</p>
+						</div>
+					</div>
+					<!-- single features -->
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-features">
+							<div class="f-icon">
+								<img th:src="@{/images/call-center.png}" alt="" height="45px">
+							</div>
+							<h6 class="font-weight-bold">Chăm sóc khách hàng 24/7</h6>
+							<p>Tận tình tư vấn và hỗ trợ kĩ thuật 24/7</p>
+						</div>
+					</div>
+					<!-- single features -->
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-features">
+							<div class="f-icon">
+								<img th:src="@{/images/money.png}" alt="" height="45px">
+							</div>
+							<h6 class="font-weight-bold">Thanh Toán An Toàn</h6>
+							<p>Có thể thanh toán trực tuyến và thanh toán khi nhận hàng</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end features Area -->
 
 	</main>
-	
+
 </body>
-  
+
 </html>
