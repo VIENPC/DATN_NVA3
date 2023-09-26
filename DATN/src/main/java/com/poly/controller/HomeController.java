@@ -69,4 +69,9 @@ public class HomeController {
 	public String blog() {
 		return "banhang/view/blog";
 	}
+	
+	@RequestMapping("all_blog") 
+	public String all_blog() {
+		return "banhang/view/all-blog";
+	}
 }
