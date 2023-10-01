@@ -20,7 +20,6 @@ import com.poly.entities.KhachHang;
 import com.poly.service.CustomerService;
 
 @RestController
-@CrossOrigin(origins = "*")
 public class UserRestController {
     @Autowired
     CustomerService customerServive;

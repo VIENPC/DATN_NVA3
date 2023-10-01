@@ -58,19 +58,36 @@
 			});
 		});
 
-		function slideImage() {
-			const showcaseImage = document.querySelector('.img-showcase img:first-child');
-			if (showcaseImage) {
-				const displayWidth = showcaseImage.clientWidth;
-				document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
-			} else {
-				console.log("Không tìm thấy phần tử '.img-showcase img:first-child'");
-			}
-		}
+		// function slideImage() {
+		// 	const showcaseImage = document.querySelector('.img-showcase img:first-child');
+		// 	if (showcaseImage) {
+		// 		const displayWidth = showcaseImage.clientWidth;
+		// 		document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+		// 	} else {
+		// 		console.log("Không tìm thấy phần tử '.img-showcase img:first-child'");
+		// 	}
+		// }
 
-		window.addEventListener('resize', slideImage);
+		// window.addEventListener('resize', slideImage);
 
+		// (function ($) {
+		// 	"use strict";
+		// 	// Back to top button
+		// 	$(window).scroll(function () {
+		// 		if ($(this).scrollTop() > 100) {
+		// 			$('.back-to-top').fadeIn('slow');
+		// 		} else {
+		// 			$('.back-to-top').fadeOut('slow');
+		// 		}
 
+		// 	});
+		// 	$('.back-to-top').click(function () {
+
+		// 		$('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+		// 		return false;
+		// 	});
+
+		// })(jQuery);
 
 	</script>
 	<script src="https://uhchat.net/code.php?f=5398bd"></script>

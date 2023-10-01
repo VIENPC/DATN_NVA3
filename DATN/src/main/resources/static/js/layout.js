@@ -558,7 +558,7 @@ app.controller("checkctrl", function ($scope, $http, $filter) {
             .reduce((total, amt) => total += amt, 0);
     };
     $scope.orderDetails2 = function () {
-        return $scope.cartItems.map(cart => {
+        return $scope.cartItems.map(cart => { 
             return {
                 sanpham: { masp: cart.masp },
                 giasp: cart.giasp,

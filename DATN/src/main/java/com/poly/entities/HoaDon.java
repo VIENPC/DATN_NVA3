@@ -14,7 +14,7 @@ import lombok.Data;
 @Entity
 @Table(name = "Hoadon")
 public class HoaDon {
-	@Id
+	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int mahd;
 	@ManyToOne
